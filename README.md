@@ -1,6 +1,6 @@
 # YouTube Transcript API
 
-A reverse engineered Node API wrapper for YouTube Transcript (youtubetranscript.com)
+A reverse engineered Node API wrapper for YouTube Transcript ([youtubetranscript.com](https://youtubetranscript.com))
 
 I built this for fun :P
 
@@ -58,7 +58,7 @@ To use the `getTranscript` method, you need to provide a YouTube video ID as an 
 ### validateID
 To use the `validateID` method, you need to provide a YouTube video ID as an argument. This method allows us to determine the existence of a YouTube video by returning a Boolean value.
 
-<i>This method is not a predefined endpoint of [youtubetranscript.com](youtubetranscript.com), but it is a feature that is available within the website's functionality.</i>
+<i>This method is not a predefined endpoint of [youtubetranscript.com](https://youtubetranscript.com), but it is a feature that is available within the website's functionality.</i>
 
 ```js
 >>> getTranscript('dQw4w9WgXcQ').then(console.log);
