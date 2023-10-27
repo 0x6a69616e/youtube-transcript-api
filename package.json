@@ -1,6 +1,6 @@
 {
   "name": "@0x6a69616e/youtube-transcript",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "0x6a69616e",
   "description": "A reverse engineered Node API wrapper for YouTube Transcript (youtubetranscript.com)",
   "main": "index.js",
