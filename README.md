@@ -61,12 +61,12 @@ To use the `validateID` method, you need to provide a YouTube video ID as an arg
 <i>This method is not a predefined endpoint of [youtubetranscript.com](https://youtubetranscript.com), but it is a feature that is available within the website's functionality.</i>
 
 ```js
->>> getTranscript('dQw4w9WgXcQ').then(console.log);
+>>> validateID('dQw4w9WgXcQ').then(console.log);
 
 true
 ```
 ```js
->>> getTranscript('somenonexistentvideoid').then(console.log);
+>>> validateID('somenonexistentvideoid').then(console.log);
 
 false
 ```
