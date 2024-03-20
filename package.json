@@ -4,6 +4,10 @@
   "author": "0x6a69616e",
   "description": "A reverse engineered Node API wrapper for YouTube Transcript (youtubetranscript.com)",
   "main": "index.js",
+  "type": "module",
+  "exports": {
+    "import": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
