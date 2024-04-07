@@ -1,5 +1,6 @@
-const
-  axios = require('axios'),
+'use strict';
+
+const axios = require('axios'),
   cheerio = require('cheerio');
 
 async function getTranscript(id) {

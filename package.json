@@ -2,11 +2,12 @@
   "name": "@0x6a69616e/youtube-transcript",
   "version": "1.0.0",
   "author": "0x6a69616e",
-  "description": "A reverse engineered Node API wrapper for YouTube Transcript (youtubetranscript.com)",
-  "main": "index.js",
+  "description": "Reversed youtubetranscript.com in Node.js for fun :P",
+  "main": "./src/index.js",
   "type": "module",
   "exports": {
-    "import": "./index.js"
+    "import": "./src/index.js",
+    "require": "./src/index.cjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
