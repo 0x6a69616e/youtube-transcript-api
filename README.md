@@ -1,21 +1,25 @@
-# youtube-transcript
-> Reversed [youtubetranscript.com](https://youtubetranscript.com) in Node.js for fun :P
+# youtube-transcript-api
+> A YouTube video transcript extractor based on reverse-engineered youtubetranscript.com
 
 ## Installation
 ```sh
-$ npm install @0x6a69616e/youtube-transcript
+$ npm install youtube-transcript-api
 ```
 
 ## Documentation
 Import the library into your project like so. Both CJS and ESM are supported.
 ```js
-import YouTubeTranscriptAPI from '@0x6a69616e/youtube-transcript';
+import YouTubeTranscriptAPI from 'youtube-transcript-api';
 // YouTubeTranscriptAPI.getTranscript
 // YouTubeTranscriptAPI.validateID
 ```
 
-### .getTranscript()
-To use the `getTranscript` method, you need to provide a YouTube video ID as an argument. If the video specified by the provided ID is not available or does not have captions, an error will be thrown: `Error: transcripts disabled for that video`
+### .getTranscript(*videoID*)
+Obtains the transcript of a YouTube video. If the provided video is not available or does not have captions, an error will be thrown: **Error: transcripts disabled for that video**
+- `videoID`: The YouTube video ID
+
+returns `Array`
+
 ```js
 >>> getTranscript('dQw4w9WgXcQ').then(transcript => console.log(transcript));
 
@@ -54,8 +58,12 @@ To use the `getTranscript` method, you need to provide a YouTube video ID as an 
 ]
 ```
 
-### .validateID()
-To use the `validateID` method, you need to provide a YouTube video ID as an argument. This method allows us to determine the existence of a YouTube video by returning a Boolean value.
+### .validateID(*videoID*)
+Determines the availability of a YouTube video <ins>from Google</ins> (not of the youtubetranscript.com API, but of its functionality). Use is recommended when it is necessary to differentiate between an unavailable video and one lacking a transcript.
+- `videoID`: The YouTube video ID
+
+returns `Boolean`
+
 ```js
 >>> validateID('dQw4w9WgXcQ').then(console.log);
 

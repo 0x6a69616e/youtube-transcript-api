@@ -1,8 +1,8 @@
 {
-  "name": "@0x6a69616e/youtube-transcript",
+  "name": "youtube-transcript-api",
   "version": "1.0.0",
   "author": "0x6a69616e",
-  "description": "Reversed youtubetranscript.com in Node.js for fun :P",
+  "description": "A YouTube video transcript extractor based on reverse-engineered youtubetranscript.com",
   "main": "./src/index.js",
   "type": "module",
   "exports": {
@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/0x6a69616e/youtube-transcript.git"
+    "url": "https://github.com/0x6a69616e/youtube-transcript-api.git"
   },
   "dependencies": {
     "axios": "^1.6.0",
