@@ -14,9 +14,10 @@ import YouTubeTranscriptAPI from 'youtube-transcript-api';
 // YouTubeTranscriptAPI.validateID
 ```
 
-### .getTranscript(*videoID*)
-Obtains the transcript of a YouTube video. If the provided video is not available or does not have captions, an error will be thrown: **Error: transcripts disabled for that video**
+### .getTranscript(*videoID*, *config*)
+Gets the transcript of a YouTube video. If the provided video is inaccessible or does not have captions, an error will be thrown: **Error: transcripts disabled for that video**
 - `videoID`: The YouTube video ID
+- `config` (optional): Request configurations for the Axios HTTP client. See available options [here](https://axios-http.com/docs/req_config)
 
 returns `Array`
 
@@ -58,9 +59,12 @@ returns `Array`
 ]
 ```
 
-### .validateID(*videoID*)
-Determines the availability of a YouTube video <ins>from Google</ins> (not of the youtubetranscript.com API, but of its functionality). Use is recommended when it is necessary to differentiate between an unavailable video and one lacking a transcript.
+### .validateID(*videoID*, *config*)
+**Not of the youtubetranscript.com API. Utilizes the discontinued [video.google.com/timedtext](https://video.google.com/timedtext?lang=en-US&v=dQw4w9WgXcQ&fmt=vtt) endpoint.*
+
+Checks if a video with the specified ID exists on YouTube. Use is recommended when it becomes necessary to differentiate between a video that does not exist and one lacking a transcript.
 - `videoID`: The YouTube video ID
+- `config` (optional): Request configurations for the Axios HTTP client. See available options [here](https://axios-http.com/docs/req_config)
 
 returns `Boolean`
 
