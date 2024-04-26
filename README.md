@@ -9,20 +9,21 @@ $ npm install youtube-transcript-api
 ## Documentation
 Import the library into your project like so. Both CJS and ESM are supported.
 ```js
-import YouTubeTranscriptAPI from 'youtube-transcript-api';
-// YouTubeTranscriptAPI.getTranscript
-// YouTubeTranscriptAPI.validateID
+import TranscriptAPI from 'youtube-transcript-api';
+// => TranscriptAPI
 ```
 
-### .getTranscript(*videoID*, *config*)
-Gets the transcript of a YouTube video. If the provided video is inaccessible or does not have captions, an error will be thrown: **Error: transcripts disabled for that video**
+### class TranscriptAPI
+#### #getTranscript(*videoID*, [*config*])
+Gets the transcript of a YouTube video. If the provided video is inaccessible or does not have captions, error "transcripts disabled for that video" will be thrown.
+
 - `videoID`: The YouTube video ID
 - `config` (optional): Request configurations for the Axios HTTP client. See available options [here](https://axios-http.com/docs/req_config)
 
 returns `Array`
 
 ```js
->>> getTranscript('dQw4w9WgXcQ').then(transcript => console.log(transcript));
+>>> getTranscript('dQw4w9WgXcQ').then(console.log);
 
 [
   {
@@ -59,14 +60,14 @@ returns `Array`
 ]
 ```
 
-### .validateID(*videoID*, *config*)
-**Not of the youtubetranscript.com API. Utilizes the discontinued [video.google.com/timedtext](https://video.google.com/timedtext?lang=en-US&v=dQw4w9WgXcQ&fmt=vtt) endpoint.*
+#### #validateID(*videoID*, [*config*])
+**Utilizes the discontinued [video.google.com/timedtext](https://video.google.com/timedtext?lang=en-US&v=dQw4w9WgXcQ&fmt=vtt) endpoint.*
 
-Checks if a video with the specified ID exists on YouTube. Use is recommended when it becomes necessary to differentiate between a video that does not exist and one lacking a transcript.
+Checks if a video with the specified ID exists on YouTube. Recommended to use when it is necessary to differentiate between a video that does not exist and one that lacks a transcript.
 - `videoID`: The YouTube video ID
 - `config` (optional): Request configurations for the Axios HTTP client. See available options [here](https://axios-http.com/docs/req_config)
 
-returns `Boolean`
+returns `boolean`
 
 ```js
 >>> validateID('dQw4w9WgXcQ').then(console.log);
