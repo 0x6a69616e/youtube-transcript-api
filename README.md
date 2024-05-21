@@ -1,6 +1,10 @@
 # youtube-transcript-api
 > A YouTube video transcript extractor based on reverse-engineered youtubetranscript.com
 
+## Limitations
+- Subtitles are unretrievable for private videos.
+- No multilanguage transcript support; extractor uses the default language of a given video.
+
 ## Installation
 ```sh
 $ npm install youtube-transcript-api
