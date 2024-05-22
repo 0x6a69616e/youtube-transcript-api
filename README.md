@@ -28,7 +28,7 @@ Gets the transcript of a YouTube video. If the provided video is inaccessible or
 returns `Array`
 
 ```js
->>> getTranscript('dQw4w9WgXcQ').then(console.log);
+>>> TranscriptAPI.getTranscript('dQw4w9WgXcQ').then(console.log);
 
 [
   {
@@ -75,7 +75,7 @@ Checks if a video with the specified ID exists on YouTube. Use is recommended wh
 returns `boolean`
 
 ```js
->>> validateID('dQw4w9WgXcQ').then(console.log);
+>>> TranscriptAPI.validateID('dQw4w9WgXcQ').then(console.log);
 
 true
 ```
