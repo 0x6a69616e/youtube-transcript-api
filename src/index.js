@@ -1,5 +1,5 @@
-const axios = require('axios'),
-  cheerio = require('cheerio');
+import axios from "axios";
+import cheerio from "cheerio";
 
 class TranscriptAPI {
   static async getTranscript(id, config = {}) {

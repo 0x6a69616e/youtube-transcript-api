@@ -1,6 +1,6 @@
 {
   "name": "youtube-transcript-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "0x6a69616e",
   "description": "A YouTube video transcript extractor based on reverse-engineered youtubetranscript.com",
   "main": "./src/index.js",
