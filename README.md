@@ -19,7 +19,7 @@ import TranscriptAPI from 'youtube-transcript-api';
 
 ### class TranscriptAPI
 
-#### #getTranscript(*videoID*, [*config*])
+#### .getTranscript(*videoID*, [*config*])
 Gets the transcript of a YouTube video. If the provided video is inaccessible or does not have captions, error "transcripts disabled for that video" will be thrown.
 
 - `videoID`: The YouTube video ID
@@ -65,7 +65,7 @@ returns `Array`
 ]
 ```
 
-#### #validateID(*videoID*, [*config*])
+#### .validateID(*videoID*, [*config*])
 **Utilizes the discontinued [video.google.com/timedtext](https://video.google.com/timedtext?lang=en-US&v=dQw4w9WgXcQ&fmt=vtt) endpoint.*
 
 Checks if a video with the specified ID exists on YouTube. Use is recommended when it is necessary to differentiate between a video that does not exist and one that lacks a transcript.
@@ -80,7 +80,7 @@ returns `boolean`
 true
 ```
 ```js
->>> validateID('somenonexistentvideoid').then(console.log);
+>>> TranscriptAPI.validateID('somenonexistentvideoid').then(console.log);
 
 false
 ```
