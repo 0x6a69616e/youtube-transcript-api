@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as cheerio from "cheerio"; // to solve the error that is coming in some projects 
+import * as cheerio from "cheerio";
 
 class TranscriptAPI {
   static async getTranscript(id, config = {}) {
