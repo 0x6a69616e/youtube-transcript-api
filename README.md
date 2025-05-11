@@ -21,7 +21,7 @@ import TranscriptAPI from 'youtube-transcript-api';
 
 ### class TranscriptAPI
 
-#### .getTranscript(*id*, [*config*])
+#### .getTranscript(*id*, *langCode*, [*config*])
 Retrieves the transcript of a particular video.
 - `id`: The YouTube video ID
 - `langCode` (optional): ISO 639-1 language code. Defaults to `"en"`

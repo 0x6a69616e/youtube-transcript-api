@@ -1,6 +1,6 @@
 {
   "name": "youtube-transcript-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "0x6a69616e",
   "description": "A YouTube video transcript extractor based on a reverse-engineered Free Youtube Transcript Generator by Tactiq.io",
   "main": "./src/index.js",
