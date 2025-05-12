@@ -35,42 +35,39 @@ returns `Promise<Object>`
 
 ```js
 >>> TranscriptAPI.getTranscript('dQw4w9WgXcQ').then(console.log);
-{
-  "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
-  "captions": [
-    {
-      "text": "[Music]",
-      "start": "0.0",
-      "duration": "14.65"
-    },
-    {
-      "text": "we're no strangers to",
-      "start": "18.8",
-      "duration": "7.239"
-    },
-    {
-      "text": "love you know the rules and so do",
-      "start": "21.8",
-      "duration": "7.84"
-    },
-    {
-      "text": "I I full commitments while I'm thinking",
-      "start": "26.039",
-      "duration": "5.201"
-    },
-    {
-      "text": "of",
-      "start": "29.64",
-      "duration": "5.88"
-    },
-    {
-      "text": "you wouldn't get this from any other guy",
-      "start": "31.24",
-      "duration": "8.2"
-    },
-    ...
-  ]
-}
+[
+  {
+    "text": "[Music]",
+    "start": "0.0",
+    "duration": "14.65"
+  },
+  {
+    "text": "we're no strangers to",
+    "start": "18.8",
+    "duration": "7.239"
+  },
+  {
+    "text": "love you know the rules and so do",
+    "start": "21.8",
+    "duration": "7.84"
+  },
+  {
+    "text": "I I full commitments while I'm thinking",
+    "start": "26.039",
+    "duration": "5.201"
+  },
+  {
+    "text": "of",
+    "start": "29.64",
+    "duration": "5.88"
+  },
+  {
+    "text": "you wouldn't get this from any other guy",
+    "start": "31.24",
+    "duration": "8.2"
+  },
+  ...
+]
 ```
 
 #### .validateID(*id*, [*config*])
