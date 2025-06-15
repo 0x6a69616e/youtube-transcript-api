@@ -16,7 +16,7 @@
    * [🧪 API](#api)
       + [`new TranscriptClient([AxiosOptions])`](#new-transcriptclientaxiosoptions)
       + [`client.ready : Promise<void>`](#clientready-promisevoid)
-      + [`client.getTranscript(videoId, [config])`](#clientgettranscriptvideoid-config)
+      + [`client.getTranscript(id, [config])`](#clientgettranscriptid-config)
          - [Parameters](#parameters)
          - [Returns](#returns)
          - [Errors](#errors)
@@ -99,7 +99,7 @@ Upon instantiation of `TranscriptClient`, Firebase configuration credentials for
 
 ---
 
-<!-- TOC --><a name="clientgettranscriptvideoid-config" id="clientgettranscriptvideoid-config"></a>
+<!-- TOC --><a name="clientgettranscriptid-config" id="clientgettranscriptid-config"></a>
 ### `client.getTranscript(id, [config])`
 
 Fetch the transcript of a single YouTube video.
