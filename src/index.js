@@ -103,6 +103,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
+                    "X-Telemetry-Id": "9821-b",
                     'X-Hash': generateRandomHex(64)
                 }
             });
@@ -131,6 +132,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
+                    "X-Telemetry-Id": "9821-b",
                     'X-Hash': generateRandomHex(64)
                 }
             });
