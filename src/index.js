@@ -87,6 +87,25 @@ class TranscriptClient {
     }
 
     /**
+     * Gets x-telemetry-id value
+     * @param {string} id - The YouTube video ID
+     * @returns Firebase auth details
+     */
+    #get_x_telemetry_id(id) {
+        return (async () => {
+            const { data } = await this.#instance.get("/videos/" + id);
+            const $ = cheerio.load(data);
+
+            for (const elem of $("script[src]").toArray()) {
+                const url = $(elem).attr("src");
+                const { data: script } = await this.#instance.get(url);
+                const match = script.match(/"x-telemetry-id"\s*:\s*"([^"]+)"/gm);
+                if (match) return Function("return ({" +  match[0] + "});")()['x-telemetry-id'];
+            }
+        })();
+    }
+
+    /**
      * Retrieves the transcript of a particular video.
      * @param {string} id - The YouTube video ID
      * @param {object} [config] - Request configurations for the Axios HTTP client
@@ -103,7 +122,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
-                    "X-Telemetry-Id": "9821-b",
+                    "X-Telemetry-Id": await this.#get_x_telemetry_id(id),
                     'X-Hash': generateRandomHex(64)
                 }
             });
@@ -132,7 +151,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
-                    "X-Telemetry-Id": "9821-b",
+                    "X-Telemetry-Id": await this.#get_x_telemetry_id(id),
                     'X-Hash': generateRandomHex(64)
                 }
             });
