@@ -120,7 +120,7 @@ class TranscriptClient {
             for (const elem of $("script[src]").toArray()) {
                 const url = $(elem).attr("src");
                 const { data: script } = await this.#instance.get(url);
-                const match = script.match(/"x-hash":s\}:\{\},"([^"]+)"\s*:\s*"([^"]+)"\},body:JSON\.stringify\(\{ids:\[t\]\}\)/gm);
+                const match = script.match(/"([^"]+)"\s*:\s*"([^"]+)"\},body:JSON\.stringify\(\{ids:\[t\]\}\)/gm);
                 if (match) {
                     const nextMatch = match[0].match(/"([^"]+)"\s*:\s*"([^"]+)"/);
                     return [nextMatch[1], nextMatch[2]];
