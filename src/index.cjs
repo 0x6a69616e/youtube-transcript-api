@@ -167,6 +167,7 @@ class TranscriptClient {
      */
     async bulkGetTranscript(ids, config) {
         const auth = await this.#get_auth();
+        const x_header = await this.#get_x_client_context(id);
 
         try {
             const { data } = await this.#instance.post("/api/transcripts", {
@@ -176,7 +177,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
-                    "X-Client-Context": await this.#get_x_client_context(id),
+                    [x_header[0]]: x_header[1],
                     'X-Hash': generateRandomHex(64)
                 }
             });
