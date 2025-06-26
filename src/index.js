@@ -99,8 +99,11 @@ class TranscriptClient {
             for (const elem of $("script[src]").toArray()) {
                 const url = $(elem).attr("src");
                 const { data: script } = await this.#instance.get(url);
-                const match = script.match(/"x-client-context"\s*:\s*"([^"]+)"/gm);
-                if (match) return Function("return ({" +  match[0] + "});")()['x-client-context'];
+                const match = script.match(/"x-hash":s\}:\{\},"([^"]+)"\s*:\s*"([^"]+)"\},body:JSON\.stringify\(\{ids:\[t\]\}\)/gm);
+                if (match) {
+                    const nextMatch = match[0].match(/"([^"]+)"\s*:\s*"([^"]+)"/);
+                    return [nextMatch[1], nextMatch[2]];
+                }
             }
         })();
     }
@@ -113,6 +116,7 @@ class TranscriptClient {
      */
     async getTranscript(id, config) {
         const auth = await this.#get_auth();
+        const x_header = await this.#get_x_client_context(id);
 
         try {
             const { data } = await this.#instance.post("/api/transcripts", {
@@ -122,7 +126,7 @@ class TranscriptClient {
                 headers: {
                     ...(config?.headers || {}),
                     Authorization: "Bearer " + auth.idToken,
-                    "X-Client-Context": await this.#get_x_client_context(id),
+                    [x_header[0]]: x_header[1],
                     'X-Hash': generateRandomHex(64)
                 }
             });
